@@ -1,0 +1,216 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #000; /* Deep black background */
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Amplifier Container */
+.amplifier-container {
+  max-width: 1200px;
+  width: 95%;
+  height: auto;
+  background: linear-gradient(135deg, #ff7300, #ff4500); /* Glossy orange gradient */
+  border: 8px solid #000; /* Black amplifier edge border */
+  border-radius: 50px 50px 0 0; /* Rounded top corners, flat bottom */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8); /* Strong shadow for pop-out effect */
+  padding-bottom: 40px; /* Increased to accommodate projection */
+  position: relative; /* For positioning the footer projection */
+  overflow: hidden;
+}
+
+/* Amplifier Header */
+.amplifier-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Black strip for branding */
+  padding: 20px;
+  border-top-left-radius: 40px; /* Rounded top corners */
+  border-top-right-radius: 40px;
+  box-shadow: inset 0px -3px 5px rgba(0, 0, 0, 0.5); /* Inset shadow for depth */
+}
+
+/* Circle Logo */
+.circle-logo {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #ff7300, #ff4500);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Brand Name */
+.brand-name {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Highlight Section */
+.highlight {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Control Panel */
+.control-panel {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+  padding: 20px;
+  border: none;
+  border-radius: 40px;
+  box-shadow: inset 0px 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Panel Title */
+.panel-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Knobs */
+.knob-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.knob-link {
+  display: block;
+}
+
+.knob-indicator {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, #ff7300, #cc3700);
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.6), inset 0px -4px 6px rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.knob-indicator:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8), inset 0px -6px 8px rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.knob-indicator:active {
+  transform: scale(1.1);
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.7), 0px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.knob-text {
+  font-size: 0.9rem;
+  color: #fff;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  margin-top: 5px;
+  transition: color 0.2s ease;
+}
+
+.knob-text:hover {
+  color: #ff7300;
+  cursor: pointer;
+}
+
+/* Track Display */
+.track-display iframe {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Amplifier Footer */
+.amplifier-footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-top: 8px solid #ff6100;
+  margin-top: auto;
+  flex-shrink: 0;
+  position: relative; /* For the projection effect */
+}
+
+/* Footer Projection */
+.amplifier-footer::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; /* Adjusts how far the projection extends */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60px; /* Height of the projection */
+  background: linear-gradient(135deg, #ff7300, #ff4500); /* Match container gradient */
+  border: 8px solid #000;
+  border-top: none;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8);
+  z-index: -1; /* Place behind the footer content */
+}
+
+/* Footer Text */
+.amplifier-footer p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.amplifier-footer a {
+  color: #ff7300;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.amplifier-footer a:hover {
+  color: #ffc773;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 1.5rem;
+  }
+
+  .knob-indicator {
+    width: 40px;
+    height: 40px;
+  }
+
+  .knob-text {
+    font-size: 0.8rem;
+  }
+
+  .circle-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
